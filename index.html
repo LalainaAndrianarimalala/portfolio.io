@@ -216,6 +216,7 @@
         display: flex;
         gap: 1rem;
         align-items: center;
+        flex-wrap: wrap;
       }
       .btn-primary {
         padding: 0.75rem 1.8rem;
@@ -244,6 +245,24 @@
       .btn-ghost:hover {
         border-color: var(--blue);
         background: rgba(37, 99, 235, 0.07);
+      }
+      .btn-cv {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.8rem;
+        border: 1px solid rgba(6, 182, 212, 0.4);
+        color: var(--cyan);
+        border-radius: 8px;
+        font-family: var(--font-head);
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: border-color 0.2s, background 0.2s;
+        cursor: pointer;
+      }
+      .btn-cv:hover {
+        border-color: var(--cyan);
+        background: rgba(6, 182, 212, 0.07);
       }
 
       /* Hero card */
@@ -656,6 +675,7 @@
         justify-content: center;
         font-size: 1rem;
         color: var(--blue-light);
+        flex-shrink: 0;
       }
 
       /* ── FOOTER ─────────────────────────────────────── */
@@ -687,24 +707,16 @@
         .contact-wrap {
           flex-direction: column;
         }
-      }
-      .btn-cv {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.8rem;
-        border: 1px solid rgba(6, 182, 212, 0.4);
-        color: var(--cyan);
-        border-radius: 8px;
-        font-family: var(--font-head);
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: border-color 0.2s, background 0.2s;
-        cursor: pointer;
-      }
-      .btn-cv:hover {
-        border-color: var(--cyan);
-        background: rgba(6, 182, 212, 0.07);
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .hero-actions .btn-primary,
+        .hero-actions .btn-ghost,
+        .hero-actions .btn-cv {
+          text-align: center;
+          justify-content: center;
+        }
       }
     </style>
   </head>
@@ -734,17 +746,18 @@
             ANDRIANARIMALALA<br /><span class="accent">Andry Lalaina</span>
           </h1>
           <p class="hero-desc">
-            Développeur passionné avec plus de 3 ans d'expérience dans la
-            conception et le développement de solutions web robustes. Spécialisé
-            en Symfony, React et architecture MVC.
+            Développeur full stack avec plus de 4 ans d'expérience dans la
+            conception, le développement et la maintenance d'applications web
+            métier. Spécialisé en Symfony, architectures MVC et refactorisation
+            de code legacy.
           </p>
           <div class="hero-stats">
             <div class="hero-stat">
-              <strong>3+</strong>
+              <strong>4+</strong>
               <span>Ans d'expérience</span>
             </div>
             <div class="hero-stat">
-              <strong>5+</strong>
+              <strong>8+</strong>
               <span>Projets livrés</span>
             </div>
             <div class="hero-stat">
@@ -788,20 +801,123 @@
         <h2 class="section-title">Expériences professionnelles</h2>
         <p class="section-sub">
           Des projets concrets avec des résultats mesurables, de la médiathèque
-          à la microfinance.
+          à la microfinance, en passant par la santé et la gestion de flux.
         </p>
 
         <div class="timeline">
-          <!-- Marie Stopes -->
+          <!-- RIA Tech (Avril - Juillet 2026) -->
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-header">
               <div class="tl-title">Développeur Full Stack</div>
-              <div class="tl-date">Jan 2025 — Juin 2025</div>
+              <div class="tl-date">Avril 2026 — Juillet 2026</div>
             </div>
             <div class="tl-company">
-              <i class="ri-building-line"></i>Marie Stopes Madagascar — Contrat
+              <i class="ri-building-line"></i>RIA Tech — Antananarivo
+            </div>
+            <div class="tl-projects">
+              <div class="tl-project">
+                <div class="tl-project-name">
+                  <i class="ri-user-voice-line"></i>Plateforme de gestion de file
+                  d'attente
+                </div>
+                <p>
+                  Conception d'une plateforme commercialisable pour banques,
+                  cliniques et grandes surfaces, visant à fluidifier l'accueil
+                  et réduire les temps d'attente. Architecture en CQRS avec
+                  Symfony 7 et frontend React.
+                </p>
+                <div class="tl-results">
+                  <span class="result-chip"
+                    ><i class="ri-check-line"></i>En phase de
+                    commercialisation</span
+                  >
+                  <span class="result-chip"
+                    ><i class="ri-check-line"></i>Notifications SMS temps
+                    réel</span
+                  >
+                </div>
+                <div class="tags">
+                  <span class="tag blue">Symfony 7</span>
+                  <span class="tag blue">React.js</span>
+                  <span class="tag">CQRS</span>
+                  <span class="tag">API REST</span>
+                  <span class="tag">Bootstrap 4</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">SMS Gateway</span>
+                </div>
+              </div>
+              <div class="tl-project">
+                <div class="tl-project-name">
+                  <i class="ri-mail-send-line"></i>API SMS & Emails avec Gammu
+                </div>
+                <p>
+                  Développement d'une API backend Node.js/Express pour l'envoi
+                  et la réception de SMS via modem (Gammu) et d'emails, avec
+                  persistance complète des messages en base de données.
+                </p>
+                <div class="tags">
+                  <span class="tag blue">Node.js</span>
+                  <span class="tag blue">Express</span>
+                  <span class="tag">Gammu SMS</span>
+                  <span class="tag">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinique Majunga -->
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-title">Développeur Full Stack (Prestation)</div>
+              <div class="tl-date">Sept 2025 — Fév 2026</div>
+            </div>
+            <div class="tl-company">
+              <i class="ri-hospital-line"></i>Clinique à Majunga — Contrat
               prestation
+            </div>
+            <div class="tl-projects">
+              <div class="tl-project">
+                <div class="tl-project-name">
+                  <i class="ri-pulse-line"></i>Application de suivi des actifs
+                  (médicaments, équipements, personnel)
+                </div>
+                <p>
+                  Développement d'une application web pour traçabilité en temps
+                  réel des mouvements de médicaments, d'équipements et de
+                  personnel, avec gestion des emplois du temps des responsables.
+                </p>
+                <div class="tl-results">
+                  <span class="result-chip"
+                    ><i class="ri-check-line"></i>Traçabilité complète validée
+                    en test</span
+                  >
+                  <span class="result-chip"
+                    ><i class="ri-check-line"></i>Projet livré à 90% (pause liée
+                    au déménagement)</span
+                  >
+                </div>
+                <div class="tags">
+                  <span class="tag blue">Symfony 7</span>
+                  <span class="tag">Tailwind CSS</span>
+                  <span class="tag">JavaScript vanilla</span>
+                  <span class="tag">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Marie Stopes -->
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-title">Développeur Full Stack (Prestation)</div>
+              <div class="tl-date">Jan 2025 — Août 2025</div>
+            </div>
+            <div class="tl-company">
+              <i class="ri-building-line"></i>Marie Stopes International —
+              Contrat prestation
             </div>
             <div class="tl-projects">
               <div class="tl-project">
@@ -813,11 +929,11 @@
                   Remplacement d'un système Excel par une application web
                   centralisée intégrant une API SMS (Telerivet) pour la collecte
                   de données en temps réel depuis le terrain avec traçabilité
-                  financière complète.
+                  financière complète et tableau de bord KPIs.
                 </p>
                 <div class="tl-results">
                   <span class="result-chip"
-                    ><i class="ri-check-line"></i>100% précision données</span
+                    ><i class="ri-check-line"></i>100% précision des données</span
                   >
                   <span class="result-chip"
                     ><i class="ri-check-line"></i>Zéro perte depuis
@@ -831,8 +947,9 @@
                   <span class="tag blue">Symfony 7</span>
                   <span class="tag blue">Tailwind CSS</span>
                   <span class="tag">API SMS Telerivet</span>
-                  <span class="tag">JavaScript</span>
+                  <span class="tag">JavaScript vanilla</span>
                   <span class="tag">MySQL</span>
+                  <span class="tag">Export PDF/Excel</span>
                 </div>
               </div>
             </div>
@@ -852,13 +969,14 @@
               <div class="tl-project">
                 <div class="tl-project-name">
                   <i class="ri-bank-line"></i>Application de gestion
-                  microfinance
+                  microfinance (HARDI Finance & PAPM)
                 </div>
                 <p>
                   Remplacement du système hérité LPF par une solution
-                  propriétaire complète pour HARDI Finance et PAPM. Modules :
-                  gestion clients (KYC), épargne, crédits, comptabilité et
-                  reporting financier.
+                  propriétaire complète. Modules : gestion clients (KYC),
+                  épargne (dépôts/intérêts), crédits (demande/approbation/suivi
+                  remboursement), comptabilité (journaux, grand-livre, états
+                  financiers).
                 </p>
                 <div class="tl-results">
                   <span class="result-chip"
@@ -869,7 +987,7 @@
                   >
                 </div>
                 <div class="tags">
-                  <span class="tag blue">Symfony 7</span>
+                  <span class="tag blue">Symfony 4/5/6/7</span>
                   <span class="tag blue">PHP 8+</span>
                   <span class="tag">Bootstrap 4</span>
                   <span class="tag">MySQL</span>
@@ -885,9 +1003,9 @@
                 </div>
                 <p>
                   Optimisation architecturale d'une application de gestion de
-                  mutuelle sanitaire religieuse catholique. Audit complet,
-                  suppression des requêtes N+1, caching, et correction des bugs
-                  critiques en production.
+                  mutuelle sanitaire. Audit complet, refactorisation des
+                  requêtes SQL (suppression N+1, indices, caching), correction
+                  des bugs bloquants en production.
                 </p>
                 <div class="tl-results">
                   <span class="result-chip"
@@ -910,10 +1028,11 @@
                   comptabilité
                 </div>
                 <p>
-                  Correction de bugs critiques affectant la fiabilité des états
-                  financiers (Bilan, Compte de Résultat). Restructuration de la
-                  logique comptable en services métier, implémentation de
-                  contrôles de validation.
+                  Correction des bugs critiques affectant la fiabilité des
+                  états financiers (Bilan, Compte de Résultat). Restructuration
+                  de la logique comptable en services métier, implémentation de
+                  contrôles de validation (double validation, équilibre
+                  débit/crédit).
                 </p>
                 <div class="tl-results">
                   <span class="result-chip"
@@ -921,7 +1040,8 @@
                     rapports</span
                   >
                   <span class="result-chip"
-                    ><i class="ri-check-line"></i>Conformité réglementaire</span
+                    ><i class="ri-check-line"></i>Conformité réglementaire
+                    validée</span
                   >
                 </div>
                 <div class="tags">
@@ -999,10 +1119,12 @@
             <div class="skill-items">
               <span class="skill-pill expert">Symfony 4–7</span>
               <span class="skill-pill expert">PHP 8+</span>
+              <span class="skill-pill">Node.js/Express</span>
               <span class="skill-pill">API REST</span>
+              <span class="skill-pill">CQRS</span>
               <span class="skill-pill">Architecture MVC</span>
               <span class="skill-pill">Design Patterns</span>
-              <span class="skill-pill">Optimisation SQL</span>
+              <span class="skill-pill">Gammu SMS</span>
             </div>
           </div>
 
@@ -1047,7 +1169,8 @@
               <span class="skill-pill">Docker</span>
               <span class="skill-pill">Postman</span>
               <span class="skill-pill">Linux / Windows</span>
-              <span class="skill-pill">Trello / Scrum</span>
+              <span class="skill-pill">Trello</span>
+              <span class="skill-pill">Agile / Scrum</span>
             </div>
           </div>
 
@@ -1072,7 +1195,7 @@
             <div class="skill-items">
               <span class="skill-pill expert">Malagasy — Natif</span>
               <span class="skill-pill expert">Français — Professionnel</span>
-              <span class="skill-pill">Anglais — Intermédiaire</span>
+              <span class="skill-pill">Anglais — Technique</span>
             </div>
           </div>
         </div>
@@ -1085,14 +1208,14 @@
         <div class="section-label">Parcours académique</div>
         <h2 class="section-title">Formation</h2>
         <p class="section-sub">
-          Un cursus orienté génie logiciel, de la licence au master.
+          Un cursus orienté génie logiciel et bases de données.
         </p>
         <div class="edu-grid">
           <div class="edu-card">
-            <div class="edu-degree">Master II en cours</div>
+            <div class="edu-degree">Master II</div>
             <div class="edu-school">CNTEMAD Madagascar</div>
             <div class="edu-field">Génie logiciel & Base de données</div>
-            <div class="edu-year">M2</div>
+            <div class="edu-year">En cours</div>
           </div>
           <div class="edu-card">
             <div class="edu-degree">Master I</div>
@@ -1116,7 +1239,7 @@
       </div>
     </section>
 
-    <!-- CONTACT (liens GitHub, WhatsApp, email ajoutés ici) -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="section-inner">
         <div class="section-label">Restons en contact</div>
@@ -1130,27 +1253,32 @@
             </p>
           </div>
           <div class="contact-links">
-            <!-- Email existant (conservé) -->
             <a href="mailto:andrilalaina144@gmail.com" class="contact-link">
               <i class="ri-mail-line"></i>
               andrilalaina144@gmail.com
             </a>
-            <!-- Nouveau lien GitHub -->
-            <a href="https://github.com/LalainaAndrianarimalala" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <a
+              href="https://github.com/LalainaAndrianarimalala"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
               <i class="ri-github-line"></i>
               GitHub / LalainaAndrianarimalala
             </a>
-            <!-- Nouveau lien linkdin -->
-            <a href="www.linkedin.com/in/andry-lalaina-andrianarimalala-9ab515228" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <a
+              href="https://www.linkedin.com/in/andry-lalaina-andrianarimalala-9ab515228"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
               <i class="ri-linkedin-line"></i>
-              Linkedin / andry-lalaina
+              LinkedIn / andry-lalaina
             </a>
-            <!-- Téléphone existant (conservé) -->
             <a href="tel:+261349395072" class="contact-link">
               <i class="ri-whatsapp-line"></i>
               034 93 950 72
             </a>
-            <!-- Adresse existante -->
             <a href="#" class="contact-link">
               <i class="ri-map-pin-line"></i>
               IPJ 19 ter Anjazamihira Itaosy, Antananarivo
@@ -1162,7 +1290,7 @@
 
     <footer>
       <p>
-        © 2025 <span>ANDRIANARIMALALA Andry Lalaina</span> — Développeur Full
+        © 2026 <span>ANDRIANARIMALALA Andry Lalaina</span> — Développeur Full
         Stack
       </p>
     </footer>
